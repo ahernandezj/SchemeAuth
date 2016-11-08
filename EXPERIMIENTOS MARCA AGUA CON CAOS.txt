@@ -1,0 +1,131 @@
+SIN RUIDO
+
+=====================
+====	0	=====
+=====================
+
+Imagen Marcada
+ El valor de PSNR es 31.6000
+ El valor de SNR es 25.7127 
+
+ Valor de la Correlacion Normalizada (NC): 0.9999 
+
+ Marca de agua extraida
+ El valor de PSNR es Inf
+ El valor de SNR es Inf 
+
+ Valor de la Correlacion Normalizada (NC): 1.0000 
+
+
+=====================
+====	5	=====
+=====================
+
+ Imagen Marcada
+ El valor de PSNR es 31.5936
+ El valor de SNR es 25.7063 
+
+ Valor de la Correlacion Normalizada (NC): 0.9994 
+
+ Marca de agua extraida
+ El valor de PSNR es Inf
+ El valor de SNR es Inf 
+
+ Valor de la Correlacion Normalizada (NC): 1.0000 
+
+=====================
+====	10	=====
+=====================
+
+Imagen Marcada
+ El valor de PSNR es 31.5935
+ El valor de SNR es 25.7063 
+
+ Valor de la Correlacion Normalizada (NC): 0.9993 
+
+ Marca de agua extraida
+ El valor de PSNR es Inf
+ El valor de SNR es Inf 
+
+ Valor de la Correlacion Normalizada (NC): 1.0000 
+
+
+
+
+
+
+CON RUIDO: salt & pepper
+
+=====================
+====	0	=====
+=====================
+
+ Marca de agua extraida
+ El valor de PSNR es 11.5778
+ El valor de SNR es 5.9953 
+
+ Valor de la Correlacion Normalizada (NC): 0.6308 
+
+
+=====================
+====	5	=====
+=====================
+
+
+Marca de agua extraida
+ El valor de PSNR es 14.1611
+ El valor de SNR es 8.5787 
+
+ Valor de la Correlacion Normalizada (NC): 0.7557 
+
+=====================
+====	10	=====
+=====================
+
+Marca de agua extraida
+ El valor de PSNR es 14.3771
+ El valor de SNR es 8.7947 
+
+ Valor de la Correlacion Normalizada (NC): 0.7877 
+
+
+
+
+
+
+
+
+
+
+
+CON RUIDO: gaussian
+
+=====================
+====	0	=====
+=====================
+
+Marca de agua extraida
+ El valor de PSNR es 12.6898
+ El valor de SNR es 7.1074 
+
+ Valor de la Correlacion Normalizada (NC): 0.7090 
+
+=====================
+====	5	=====
+=====================
+
+ Marca de agua extraida
+ El valor de PSNR es 16.0063
+ El valor de SNR es 10.4239 
+
+ Valor de la Correlacion Normalizada (NC): 0.8486 
+
+=====================
+====	10	=====
+=====================
+
+Marca de agua extraida
+ El valor de PSNR es 16.0952
+ El valor de SNR es 10.5128 
+
+ Valor de la Correlacion Normalizada (NC): 0.8565 
