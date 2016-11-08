@@ -1,14 +1,9 @@
-function [ImgATM] = ATM(image,iter)
-    % leer la imagen
-    RGB = imread(image);
+function [ImgATM] = ATM(img,iter)
     
-    [H, W, C] = size(RGB);
     
-    if(C > 1)
-        I = rgb2gray(RGB);
-    else
-        I = RGB;
-    end
+    [H, W] = size(img);
+    
+    I = img;
     
     ImgATM = zeros(H,W);
     M = H - 1;  

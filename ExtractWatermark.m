@@ -5,7 +5,7 @@ function WEW = ExtractWatermark (Wd,Sc,Uw,Vw,chaos)
     a = 0.9;
     
     if chaos >=1
-        Wd = ATMv(Wd,chaos);
+        Wd = ATM(Wd,chaos);
     end
     
     %%  PASO 2: Realizar la DWT sobre la imagen con la marca de agua (posiblemente distorsionada)
@@ -17,9 +17,10 @@ function WEW = ExtractWatermark (Wd,Sc,Uw,Vw,chaos)
     [Uw0,Sw0,Vw0] = svd(Dw);
     
     %%  PASO 5: Realizar y aplicar operación SVD
-    for i = 0.1 : a
-        Sk = (Sw0-Sc)/i;
-    end
+     for i = 0.1 : a
+         Sk = (Sw0-Sc)/i;
+     end
+
     [Uw1,Sw1,Vw1] = svd(Sk);
     
     
@@ -29,5 +30,18 @@ function WEW = ExtractWatermark (Wd,Sc,Uw,Vw,chaos)
     %%  PASO 7: Extraer la marca de agua
     WEW = idct2(Icc);
     
+    if chaos >=1
+        WEW = iATM(WEW,chaos);
+        [H,W] = size(WEW);
+        for i=1: H
+            for j=1: W
+                if(WEW(i,j)>7)
+                    WEW(i,j)=1;
+                else
+                    WEW(i,j)=0;
+                end
+            end
+        end
+    end
     
 end

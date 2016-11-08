@@ -6,8 +6,8 @@ function [r1, r2, secret] = VCRG(Imagen)
     P = BinSIS(Imagen);
     % Tamaño de las transparencias (shares)
     s = size(P);
-    r1 = zeros((s(1)), (s(2)));
-    r2 = zeros((s(1)), (s(2)));
+    r1 = uint8(zeros((s(1)), (s(2))));
+    r2 = uint8(zeros((s(1)), (s(2))));
     
     
     for i = 1: s(1)
@@ -20,16 +20,16 @@ function [r1, r2, secret] = VCRG(Imagen)
             
             [p1,p2]=CodingPixel(P(i,j));
             
-            r1(i,j) = p1;
-            r2(i,j) = p2;
+            r1(i,j) = p1*15;
+            r2(i,j) = p2*15;
             
         end
     end
-    figure;imshow(P);title('Imagen Original');
-    figure;imshow(r1);title('Share 1');
-    figure;imshow(r2);title('Share 2');
+%     figure;imshow(P);title('Imagen Original');
+%     figure;imshow(r1);title('Share 1');
+%     figure;imshow(r2);title('Share 2');
     
-    secret = bitor(r1, r2);
+    secret = bitor(r1/15, r2/15);
     secret = ~secret;
     
     figure;imshow(secret);title('Superposicion de Share 1 & 2');

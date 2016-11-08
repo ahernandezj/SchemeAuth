@@ -3,23 +3,23 @@ function [Wd,sc,uw,vwt] = HybridWatermarking (HostImage,WatermarkImage,chaos)
     % Se usan técnicas del dominio de la transformada: DWT, DCT y SVD
     % Filtro Wavelet a usar: 'haar'
     
-    if chaos < 1
-        % Leer la imagen anfitriona
-        C_w = double(imread(HostImage));
+%     if chaos < 1
+%         % Leer la imagen anfitriona
+%         C_w = double(imread(HostImage));
+% 
+%     else
+%         % Funcion caotica para la imagen
+%         C_w = double(ATM(HostImage,chaos));
+%         %W_w = double(ATM(WatermarkImage,chaos));
+%     end
 
-    else
-        % Funcion caotica para la imagen
-        C_w = double(ATM(HostImage,chaos));
-        %W_w = double(ATM(WatermarkImage,chaos));
-    end
-    
+    C_w = double(HostImage);
     % Leer la imagen de marca de agua
-    W_w = double(imread(WatermarkImage));
-        
+    %W_w = double(imread(WatermarkImage));
+    W_w = double(WatermarkImage);
+    
     % Factor de escala
     a = 0.9;
-    
-    
     
     
     %% PASO 3: Realizar DWT sobre la imagen anfitriona y la DCT
@@ -42,10 +42,10 @@ function [Wd,sc,uw,vwt] = HybridWatermarking (HostImage,WatermarkImage,chaos)
     [uw, sw, vwt]=svd(D);
     
     %%  PASO 6: Inserción de la marca de agua
-    for i = 0.1 : a
-        Wwk = sc + i*sw;
-    end
-    
+     for i = 0.1 : a
+         Wwk = sc + i*sw;
+     end
+
     %%  PASO 7: Calcular los valores singulares para Wwk y obtener
     %   los coeficientes DWT modificados
     
